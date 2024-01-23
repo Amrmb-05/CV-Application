@@ -22,7 +22,7 @@ export default function GeneralForm( {submitGeneralForm} ) {
     return (
         <section>
             <form id="general" action='' onSubmit={submitGeneralForm}>
-                <h1>Personal Details</h1>
+                <h2>Personal Details</h2>
                     <Input
                         
                         title="Name"
