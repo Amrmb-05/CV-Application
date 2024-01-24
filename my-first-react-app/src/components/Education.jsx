@@ -3,7 +3,7 @@ import { useState } from "react"
 import Form from "./Form"
 
 export default function EducationForm( {submitEduForm} ) {
-    const [eduData, setEduData] = useState({
+    const [eduInput, setEduInput] = useState({
         school:"",
         degree:"",
         startDate:"",
@@ -11,29 +11,29 @@ export default function EducationForm( {submitEduForm} ) {
     })
 
     function handleSchool(e) {
-        setEduData({
-        ...eduData, 
+        setEduInput({
+        ...eduInput, 
         school: e.target.value
     })
     }
 
     function handleDegree(e) {
-        setEduData({
-        ...eduData, 
+        setEduInput({
+        ...eduInput, 
         degree: e.target.value
     })
     }
 
     function handleStartDate(e) {
-        setEduData({
-        ...eduData, 
+        setEduInput({
+        ...eduInput, 
         startDate: e.target.value
     })
     }
 
     function handleEndDate(e) {
-        setEduData({
-        ...eduData, 
+        setEduInput({
+        ...eduInput, 
         endDate: e.target.value
     })
     }
@@ -46,7 +46,7 @@ export default function EducationForm( {submitEduForm} ) {
             <Input
                 title="School"
                 type="text"
-                value={eduData.school}
+                value={eduInput.school}
                 name="school"
                 handleChange={handleSchool}
             />
@@ -54,7 +54,7 @@ export default function EducationForm( {submitEduForm} ) {
             <Input
                 title="Degree"
                 type="text"
-                value={eduData.degree}
+                value={eduInput.degree}
                 name="degree"
                 handleChange={handleDegree}
             />
@@ -62,7 +62,7 @@ export default function EducationForm( {submitEduForm} ) {
             <Input
                 title="Start-date"
                 type="date"
-                value={eduData.startDate}
+                value={eduInput.startDate}
                 name="startDate"
                 handleChange={handleStartDate}
             />  
@@ -70,7 +70,7 @@ export default function EducationForm( {submitEduForm} ) {
 <Input
                 title="End-date"
                 type="date"
-                value={eduData.endDate}
+                value={eduInput.endDate}
                 name="endDate"
                 handleChange={handleEndDate}
             />  

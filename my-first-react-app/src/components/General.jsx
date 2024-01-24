@@ -49,37 +49,7 @@ export default function GeneralForm( {submitGeneralForm} ) {
 
                 />
         </Form>
-        // <section>
-        //     <form id="general" action='' onSubmit={submitGeneralForm}>
-        //         <h2>Personal Details</h2>
-        //             <Input
-                        
-        //                 title="Name"
-        //                 type="text"
-        //                 value={name}
-        //                 name="name"
-        //                 handleChange={handleName}
-
-        //             />
-        //             <Input
-        //                 title="Phone Number"
-        //                 type="tel"
-        //                 value={phone}
-        //                 name="phone"
-        //                 handleChange={handlePhone}
-
-        //             />
-        //             <Input
-        //                 title="Email"
-        //                 type="email"
-        //                 value={email}
-        //                 name="email"
-        //                 handleChange={handleEmail}
-
-        //             />
-        //         <button type="submit" form="general">Submit</button>
-        //     </form>
-        // </section>
+        
     )
 }
 
