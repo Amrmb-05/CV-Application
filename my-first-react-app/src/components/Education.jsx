@@ -2,7 +2,7 @@ import Input from "./Input"
 import { useState } from "react"
 import Form from "./Form"
 
-export default function EducationForm( {submitEduForm} ) {
+export default function EducationForm( {submitEduForm, isShown} ) {
     const [eduInput, setEduInput] = useState({
         school:"",
         degree:"",
@@ -42,6 +42,7 @@ export default function EducationForm( {submitEduForm} ) {
         id="edu"
         onSubmit={submitEduForm}
         title="Education"
+        isShown={isShown}
         >
             <Input
                 title="School"

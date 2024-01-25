@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import GeneralForm from './components/General'
 import EducationForm from './components/Education'
+import CvDisplay from './components/CvDisplay.jsx'
 function App() {
   const [generalData, setGeneralData] = useState({
     name:"",
@@ -16,7 +17,38 @@ function App() {
     endDate:""
   })
 
+  const [isToggled, setisToggled] = useState({
+    generalForm: false,
+    eduForm: false
+  })
 
+  function showGeneralForm() {
+    setisToggled({
+      ...isToggled,
+      generalForm: true
+    })
+  }
+
+  function hideGeneralForm() {
+    setisToggled({
+      ...isToggled,
+      generalForm: false
+    })
+  }
+
+  function showEduForm() {
+    setisToggled({
+      ...isToggled,
+      eduForm: true
+    })
+  }
+
+  function hideEduForm() {
+    setisToggled({
+      ...isToggled,
+      eduForm: false
+    })
+  }
   function submitGeneralForm(e) {
     e.preventDefault()
     const name = e.target.name.value
@@ -29,6 +61,9 @@ function App() {
       email: email
     }
     setGeneralData(newData)
+    e.target.reset()
+
+    hideGeneralForm()
   }
 
   function submitEduForm(e) {
@@ -37,20 +72,26 @@ function App() {
     const degree = e.target.degree.value
     const startDate = e.target.startDate.value
     const endDate = e.target.endDate.value
+
      const newData = {
       school: school,
       degree : degree,
       startDate: startDate,
       endDate: endDate
     }
-
     setEduData(newData)
+    e.target.reset()
+
+    hideEduForm()
   }
 
   return (
     <>
-    <GeneralForm submitGeneralForm={submitGeneralForm}/>
-    <EducationForm submitEduForm={submitEduForm}/>
+    <div>
+    <GeneralForm submitGeneralForm={submitGeneralForm} isShown={isToggled.generalForm}/>
+    <EducationForm submitEduForm={submitEduForm} isShown={isToggled.eduForm} />
+    </div>
+    <CvDisplay generalData={generalData} eduData={eduData} showGeneralForm={showGeneralForm} showEduForm={showEduForm}/>
     </>
   )
     
