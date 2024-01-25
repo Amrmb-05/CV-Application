@@ -2,7 +2,7 @@ import Input from "./Input"
 import { useState } from "react"
 import Form from "./Form"
 
-export default function GeneralForm( {submitGeneralForm, isShown} ) {
+export default function GeneralForm( {submitGeneralForm, isShown, hideForm} ) {
    const [name, setName] = useState('')
    const [phone, setPhone] = useState('')
    const [email, setEmail] = useState('')
@@ -25,6 +25,7 @@ export default function GeneralForm( {submitGeneralForm, isShown} ) {
         title="Personal Details"
         onSubmit={submitGeneralForm}
         isShown={isShown}
+        handleCancel={hideForm}
         >
             <Input   
                 title="Name"

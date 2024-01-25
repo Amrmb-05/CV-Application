@@ -134,11 +134,11 @@ function App() {
   return (
     <>
     <div>
-    <GeneralForm submitGeneralForm={submitGeneralForm} isShown={isToggled.generalForm}/>
-    <EducationForm submitEduForm={submitEduForm} isShown={isToggled.eduForm} />
-    <WorkForm submitWorkForm={submitWorkForm} isShown={isToggled.workForm}/>
+    <GeneralForm submitGeneralForm={submitGeneralForm} isShown={isToggled.generalForm} hideForm={hideGeneralForm}/>
+    <EducationForm submitEduForm={submitEduForm} isShown={isToggled.eduForm} hideForm={hideEduForm} />
+    <WorkForm submitWorkForm={submitWorkForm} isShown={isToggled.workForm} hideForm={hideWorkForm}/>
     </div>
-    <CvDisplay generalData={generalData} eduData={eduData} showGeneralForm={showGeneralForm} showEduForm={showEduForm} showWorkForm={showWorkForm}/>
+    <CvDisplay generalData={generalData} eduData={eduData} workData={workData} showGeneralForm={showGeneralForm} showEduForm={showEduForm} showWorkForm={showWorkForm}/>
     </>
   )
     

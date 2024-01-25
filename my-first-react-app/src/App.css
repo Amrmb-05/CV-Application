@@ -2,6 +2,7 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
+  padding-top: 0;
   /* display: flex;
   justify-content: space-between; */
 }
@@ -29,6 +30,9 @@ form {
   left: 35vw;
 }
 
+#work {
+  bottom: 35vh;
+}
 form h2 {
   text-align: center;
   margin: -16px -16px auto -16px;
@@ -41,6 +45,12 @@ form button {
   align-self: center;
   background-color: rgb(14, 47, 80);
   color: white;
+}
+
+.btns-container {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
 }
 .phone-email {
   font-weight: bold;

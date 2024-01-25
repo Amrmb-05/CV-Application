@@ -2,7 +2,7 @@ import Input from "./Input"
 import { useState } from "react"
 import Form from "./Form"
 
-export default function WorkForm( {submitWorkForm, isShown}) {
+export default function WorkForm( {submitWorkForm, hideForm,isShown}) {
     const [workInput, setWorkInput] = useState({
         company: "",
         position:"",
@@ -52,6 +52,7 @@ export default function WorkForm( {submitWorkForm, isShown}) {
         onSubmit={submitWorkForm}
         title="Work Experience"
         isShown={isShown}
+        handleCancel={hideForm}
         >
             <Input
                 title="Company"
@@ -72,7 +73,7 @@ export default function WorkForm( {submitWorkForm, isShown}) {
             <label htmlFor="jobDescription">
                 Job Description
             </label>
-            <textarea name="jobDescription"  id="jobDescription" cols="30" rows="10" form="work"></textarea>
+            <textarea name="jobDescription"  id="jobDescription" cols="10" rows="4" form="work" onChange={handleJobDescription}></textarea>
 
             <Input
                 title="Start Date"
