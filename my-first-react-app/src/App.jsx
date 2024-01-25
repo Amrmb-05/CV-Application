@@ -138,7 +138,7 @@ function App() {
     <EducationForm submitEduForm={submitEduForm} isShown={isToggled.eduForm} />
     <WorkForm submitWorkForm={submitWorkForm} isShown={isToggled.workForm}/>
     </div>
-    <CvDisplay generalData={generalData} eduData={eduData} showGeneralForm={showGeneralForm} showEduForm={showEduForm}/>
+    <CvDisplay generalData={generalData} eduData={eduData} showGeneralForm={showGeneralForm} showEduForm={showEduForm} showWorkForm={showWorkForm}/>
     </>
   )
     
