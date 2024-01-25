@@ -6,21 +6,42 @@
   justify-content: space-between; */
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  flex: auto;
-  padding: 2px 16px;
-  
+.full-bleed {
+  box-shadow: 0 0 0 100vmax rgb(14, 47, 80);
+  clip-path: inset(0 -100vmax);
 }
 
-.form {
+form {
+
+  display: flex;
+  flex-direction: column;
+  /* flex: auto; */
+  gap: 8px;
+  padding: 8px 16px;
+  position: absolute;
+  z-index: 9;
+  background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   border-radius: 5px;
-  max-width:400px;
+  width:300px;
+  bottom: 50vh;
+  left: 35vw;
 }
 
+form h2 {
+  text-align: center;
+  margin: -16px -16px auto -16px;
+  background-color: rgb(14, 47, 80);
+  color: white;
+  padding: 16px;
+}
+
+form button {
+  align-self: center;
+  background-color: rgb(14, 47, 80);
+  color: white;
+}
 .phone-email {
   font-weight: bold;
 }

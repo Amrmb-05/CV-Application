@@ -2,7 +2,7 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
+  position: relative;
   /* color-scheme: light dark; */
   background-color: white;
 
@@ -36,6 +36,7 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
   width: fit-content;
+  height: fit-content;
 }
 button:hover {
   border-color: #646cff;
