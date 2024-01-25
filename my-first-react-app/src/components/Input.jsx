@@ -3,7 +3,8 @@ export default function Input({title, type, value, handleChange, name}) {
         <>
         <label>
             {title}
-        </label><input type={type}
+        </label>
+        <input type={type}
             name={name}
             placeholder={title}
 
