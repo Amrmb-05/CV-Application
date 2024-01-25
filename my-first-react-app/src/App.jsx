@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import GeneralForm from './components/General'
 import EducationForm from './components/Education'
+import WorkForm from './components/Work.jsx'
 import CvDisplay from './components/CvDisplay.jsx'
 function App() {
   const [generalData, setGeneralData] = useState({
@@ -17,9 +18,19 @@ function App() {
     endDate:""
   })
 
+  const [workData, setWorkData] = useState({
+    company: "",
+    position:"",
+    jobDescription:"",
+    startDate:"",
+    endDate:""
+})
+
+
   const [isToggled, setisToggled] = useState({
     generalForm: false,
-    eduForm: false
+    eduForm: false,
+    workForm: false
   })
 
   function showGeneralForm() {
@@ -49,6 +60,21 @@ function App() {
       eduForm: false
     })
   }
+
+  function showWorkForm() {
+    setisToggled({
+      ...isToggled,
+      workForm: true
+    })
+  }
+
+  function hideWorkForm() {
+    setisToggled({
+      ...isToggled,
+      workForm: false
+    })
+  }
+
   function submitGeneralForm(e) {
     e.preventDefault()
     const name = e.target.name.value
@@ -60,6 +86,7 @@ function App() {
       phone : phone,
       email: email
     }
+
     setGeneralData(newData)
     e.target.reset()
 
@@ -85,11 +112,31 @@ function App() {
     hideEduForm()
   }
 
+  function submitWorkForm(e) {
+    e.preventDefault()
+    const company = e.target.company.value
+    const position = e.target.position.value
+    const jobDescription = e.target.jobDescription.value
+    const startDate = e.target.startDate.value
+    const endDate = e.target.endDate.value
+
+    const newData = {
+      company: company,
+      position : position,
+      jobDescription: jobDescription,
+      startDate: startDate,
+      endDate: endDate
+    }
+
+    setWorkData(newData)
+    hideWorkForm()
+  }
   return (
     <>
     <div>
     <GeneralForm submitGeneralForm={submitGeneralForm} isShown={isToggled.generalForm}/>
     <EducationForm submitEduForm={submitEduForm} isShown={isToggled.eduForm} />
+    <WorkForm submitWorkForm={submitWorkForm} isShown={isToggled.workForm}/>
     </div>
     <CvDisplay generalData={generalData} eduData={eduData} showGeneralForm={showGeneralForm} showEduForm={showEduForm}/>
     </>
